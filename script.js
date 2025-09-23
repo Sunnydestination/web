@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         viber: 'viber://chat?number=+9779845987393',
         whatsapp: 'https://wa.me/9779845987393',
         instagram: 'https://instagram.com/sunny.destination',
-        youtube: 'https://youtube.com/@sunnydestinationtravel'
+        youtube: 'https://youtube.com/@travelsolutionnepal'
     };
     
     // Logo click handler
@@ -60,4 +60,5 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 }
             });
+
         });
