@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Packages - Sunny Destination Travel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --royal-blue: #1a4b8c;
+            --sky-blue: #4a90e2;
+            --light-gray: #f5f7fa;
+            --dark-gray: #333;
+            --white: #ffffff;
+            --gold: #ffc107;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--royal-blue);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--sky-blue);
+            margin: 15px auto 30px;
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            color: #666;
+        }
+        
+        /* Navigation */
+        .navigation {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--royal-blue);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--sky-blue);
+        }
+        
+        /* Hero Section */
+        .packages-hero {
+            background: linear-gradient(rgba(26, 75, 140, 0.8), rgba(26, 75, 140, 0.9)), url('https://images.unsplash.com/photo-1528127269322-539801943592?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 120px 20px;
+        }
+        
+        .packages-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .packages-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Package Filter */
+        .package-filter {
+            background-color: var(--light-gray);
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .filter-btn {
+            padding: 10px 25px;
+            background-color: var(--white);
+            border: 2px solid var(--sky-blue);
+            color: var(--sky-blue);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--sky-blue);
+            color: var(--white);
+        }
+        
+        /* Package Cards */
+        .packages-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .package-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .package-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .package-content {
+            padding: 20px;
+        }
+        
+        .package-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--royal-blue);
+        }
+        
+        .package-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .package-duration, .package-price {
+            display: flex;
+            align-items: center;
+        }
+        
+        .package-price {
+            font-weight: bold;
+            color: var(--royal-blue);
+        }
+        
+        .package-description {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .package-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .package-features li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .package-features li i {
+            color: var(--sky-blue);
+            margin-right: 10px;
+        }
+        
+        .package-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: var(--sky-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .package-btn:hover {
+            background-color: var(--royal-blue);
+        }
+        
+        /* Call to Action */
+        .cta-section {
+            background-color: var(--royal-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--white);
+            color: var(--royal-blue);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--gold);
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #222;
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-info {
+            margin-bottom: 30px;
+        }
+        
+        .footer-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        
+        .footer-contact div {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--sky-blue);
+        }
+        
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 10px;
+            color: var(--white);
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .footer-social a:hover {
+            background-color: var(--sky-blue);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            .nav-links {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 5px 10px;
+            }
+            
+            .packages-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .packages-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Sunny Destination Travel Pvt Ltd</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="packages.html" class="active">Packages</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Packages Hero Section -->
+    <section class="packages-hero">
+        <div class="container">
+            <h1>Our Tour Packages</h1>
+            <p>Discover amazing destinations with our carefully curated tour packages. From the majestic Himalayas to exotic tropical beaches, we have the perfect adventure for you.</p>
+        </div>
+    </section>
+
+    <!-- Package Filter -->
+    <section class="package-filter">
+        <div class="container">
+            <h2>Browse Our Packages</h2>
+            <p>Filter by destination type</p>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Packages</button>
+                <button class="filter-btn" data-filter="inbound">Inbound Tours</button>
+                <button class="filter-btn" data-filter="outbound">Outbound Tours</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inbound Packages Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Inbound Tour Packages</h2>
+            <p class="section-subtitle">Explore the beauty and diversity of Nepal with our expertly crafted inbound tour packages</p>
+            
+            <div class="packages-container">
+                <!-- Kathmandu Package -->
+                <div class="package-card" data-category="inbound">
+                    <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1584557926336-7a3ca44dc53c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
+                    <div class="package-content">
+                        <h3 class="package-title">Kathmandu Cultural Tour</h3>
+                        <div class="package-meta">
+                            <span class="package-duration"><i class="far fa-clock"></i> 4 Days / 3 Nights</span>
+                            <span class="package-price">From $299</span>
+                        </div>
+                        <p class="package-description">Explore the cultural heritage of Kathmandu Valley with visits to UNESCO World Heritage Sites including Pashupatinath, Boudhanath, Swayambhunath, and Patan Durbar Square.</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Heritage site visits</li>
+                            <li><i class="fas fa-check"></i> Local guide included</li>
+                            <li><i class="fas fa-check"></i> Accommodation in 3-star hotels</li>
+                            <li><i class="fas fa-check"></i> Daily breakfast</li>
+                        </ul>
+                        <a href="#contact" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Pokhara Package -->
+                <div class="package-card" data-category="inbound">
+                    <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1564507004663-b6dfb3c824d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
+                    <div class="package-content">
+                        <h3 class="package-title">Pokhara & Annapurna Experience</h3>
+                        <div class="package-meta">
+                            <span class="package-duration"><i class="far fa-clock"></i> 6 Days / 5 Nights</span>
+                            <span class="package-price">From $499</span>
+                        </div>
+                        <p class="package-description">Experience the natural beauty of Pokhara with stunning views of the Annapurna range, boating on Phewa Lake, and exploring caves and waterfalls.</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Sarangkot sunrise view</li>
+                            <li><i class="fas fa-check"></i> Boating on Phewa Lake</li>
+                            <li><i class="fas fa-check"></i> Visit to Davis Falls and Gupteshwor Cave</li>
+                            <li><i class="fas fa-check"></i> Accommodation with mountain view</li>
+                        </ul>
+                        <a href="#contact" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Chitwan Package -->
+                <div class="package-card" data-category="inbound">
+                    <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1598894595350-7b6d3710a508?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
+                    <div class="package-content">
+                        <h3 class="package-title">Chitwan Jungle Safari</h3>
+                        <div class="package-meta">
+                            <span class="package-duration"><i class="far fa-clock"></i> 3 Days / 2 Nights</span>
+                            <span class="package-price">From $249</span>
+                        </div>
+                        <p class="package-description">Embark on an exciting jungle safari in Chitwan National Park, home to rhinos, tigers, elephants, and diverse bird species.</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Jungle safari activities</li>
+                            <li><i class="fas fa-check"></i> Elephant bathing experience</li>
+                            <li><i class="fas fa-check"></i> Tharu cultural program</li>
+                            <li><i class="fas fa-check"></i> All meals included</li>
+                        </ul>
+                        <a href="#contact" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Lumbini Package -->
+                <div class="package-card" data-category="inbound">
+                    <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1594736797937-d0401ba94693?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
+                    <div class="package-content">
+                        <h3 class="package-title">Lumbini Pilgrimage Tour</h3>
+                        <div class="package-meta">
+                            <span class="package-duration"><i class="far fa-clock"></i> 3 Days / 2 Nights</span>
+                            <span class="package-price">From $199</span>
+                        </div>
+                        <p class="package-description">Visit the birthplace of Lord Buddha and explore the sacred gardens, monasteries, and archaeological sites in Lumbini.</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Maya Devi Temple visit</li>
+                            <li><i class="fas fa-check"></i> International monastery tour</li>
+                            <li><i class="fas fa-check"></i> Meditation session</li>
+                            <li><i class="fas fa-check"></i> Knowledgeable guide</li>
+                        </ul>
+                        <a href="#contact" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Everest Base Camp Package -->
+                <div class="package-card" data-category="inbound">
+                    <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1580651315530-69c8e0026377?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
+                    <div class="package-content">
+                        <h3 class="package-title">Everest Base Camp Trek</h3>
+                        <div class="package-meta">
+                            <span class="package-duration"><i class="far fa-clock"></i> 14 Days / 13 Nights</span>
+                            <span class="package-price">From $1299</span>
+                        </div>
+                        <p class="package-description">Challenge yourself with the iconic trek to Everest Base Camp, witnessing breathtaking Himalayan scenery and Sherpa culture.</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Experienced trekking guide</li>
+                            <li><i class="fas fa-check"></i> Porter service included</li>
+                            <li><i class="fas fa-check"></i> Teahouse accommodation</li>
+                            <li><i class="fas fa-check"></i> All meals during trek</li>
+                        </ul>
+                        <a href="#contact" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Annapurna Base Camp Package -->
+                <div class="package-card" data-category="inbound">
+                    <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
+                    <div class="package-content">
+                        <h3 class="package-title">Annapurna Base Camp Trek</h3>
+                        <div class="package-meta">
+                            <span class="package-duration"><i class="far fa-clock"></i> 12 Days / 11 Nights</span>
+                            <span class="package-price">From $999</span>
+                        </div>
+                        <p class="package-description">Trek through diverse landscapes to the base of the majestic Annapurna massif, experiencing rich cultural encounters along the way.</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Professional trekking guide</li>
+                            <li><i class="fas fa-check"></i> All necessary permits</li>
+                            <li><i class="fas fa-check"></i> Accommodation in teahouses</li>
+                            <li><i class="fas fa-check"></i> Three meals daily during trek</li>
+                        </ul>
+                        <a href="#contact" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Outbound Packages Section -->
+    <section class="section" style="background-color: var(--light-gray);">
+        <div class="container">
+            <h2 class="section-title">Outbound Tour Packages</h2>
+            <p class="section-subtitle">Discover exotic international destinations with our carefully designed outbound tour packages</p>
+            
+            <div class="packages-container">
+                <!-- Thailand Package -->
+                <div class="package-card" data-category="outbound">
+                    <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
+                    <div class="package-content">
+                        <h3 class="package-title">Thailand Beach Paradise</h3>
+                        <div class="package-meta">
+                            <span class="package-duration"><i class="far fa-clock"></i> 7 Days / 6 Nights</span>
+                            <span class="package-price">From $799</span>
+                        </div>
+                        <p class="package-description">Experience the best of Thailand with visits to Bangkok's temples, Pattaya's beaches, and Phuket's vibrant nightlife.</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Bangkok city tour</li>
+                            <li><i class="fas fa-check"></i> Pattaya beach activities</li>
+                            <li><i class="fas fa-check"></i> Phi Phi Island excursion</li>
+                            <li><i class="fas fa-check"></i> 4-star accommodation</li>
+                        </ul>
+                        <a href="#contact" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Malaysia Package -->
+                <div class="package-card" data-category="outbound">
+                    <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1596422846543-75c6fc197f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
+                    <div class="package-content">
+                        <h3 class="package-title">Malaysia Cultural Explorer</h3>
+                        <div class="package-meta">
+                            <span class="package-duration"><i class="far fa-clock"></i> 8 Days / 7 Nights</span>
+                            <span class="package-price">From $899</span>
+                        </div>
+                        <p class="package-description">Discover the multicultural beauty of Malaysia with visits to Kuala Lumpur, Penang, and Langkawi.</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Petronas Towers visit</li>
+                            <li><i class="fas fa-check"></i> Penang heritage tour</li>
+                            <li><i class="fas fa-check"></i> Langkawi island hopping</li>
+                            <li><i class="fas fa-check"></i> All internal flights included</li>
+                        </ul>
+                        <a href="#contact" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Singapore Package -->
+                <div class="package-card" data-category="outbound">
+                    <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
+                    <div class="package-content">
+                        <h3 class="package-title">Singapore City Escape</h3>
+                        <div class="package-meta">
+                            <span class="package-duration"><i class="far fa-clock"></i> 5 Days / 4 Nights</span>
+                            <span class="package-price">From $699</span>
+                        </div>
+                        <p class="package-description">Experience the modern marvels of Singapore with visits to Gardens by the Bay, Sentosa Island, and Universal Studios.</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Marina Bay Sands experience</li>
+                            <li><i class="fas fa-check"></i> Universal Studios ticket</li>
+                            <li><i class="fas fa-check"></i> Night safari adventure</li>
+                            <li><i class="fas fa-check"></i> Central location hotel</li>
+                        </ul>
+                        <a href="#contact" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Indonesia Package -->
+                <div class="package-card" data-category="outbound">
+                    <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
+                    <div class="package-content">
+                        <h3 class="package-title">Bali Tropical Retreat</h3>
+                        <div class="package-meta">
+                            <span class="package-duration"><i class="far fa-clock"></i> 7 Days / 6 Nights</span>
+                            <span class="package-price">From $749</span>
+                        </div>
+                        <p class="package-description">Relax and rejuvenate in the tropical paradise of Bali with its beautiful beaches, temples, and cultural experiences.</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Ubud cultural tour</li>
+                            <li><i class="fas fa-check"></i> Beachfront accommodation</li>
+                            <li><i class="fas fa-check"></i> Traditional Balinese massage</li>
+                            <li><i class="fas fa-check"></i> Sunset dinner cruise</li>
+                        </ul>
+                        <a href="#contact" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Dubai Package -->
+                <div class="package-card" data-category="outbound">
+                    <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
+                    <div class="package-content">
+                        <h3 class="package-title">Dubai Luxury Experience</h3>
+                        <div class="package-meta">
+                            <span class="package-duration"><i class="far fa-clock"></i> 6 Days / 5 Nights</span>
+                            <span class="package-price">From $1099</span>
+                        </div>
+                        <p class="package-description">Indulge in the ultimate luxury experience in Dubai with desert safaris, shopping extravaganzas, and iconic landmarks.</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Burj Khalifa ticket included</li>
+                            <li><i class="fas fa-check"></i> Desert safari with dinner</li>
+                            <li><i class="fas fa-check"></i> Dhow cruise experience</li>
+                            <li><i class="fas fa-check"></i> 5-star accommodation</li>
+                        </ul>
+                        <a href="#contact" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Book Your Dream Vacation?</h2>
+            <p>Contact us today to customize your perfect travel package or get more information about our offerings.</p>
+            <a href="index.html#contact" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3 class="footer-title">Sunny Destination Travel Pvt. Ltd.</h3>
+                <div class="footer-contact">
+                    <div>
+                        <i class="far fa-envelope"></i>
+                        <span>sunnydestination2021@gmail.com</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-phone"></i>
+                        <span>+977 9845987393</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-social">
+                <a href="https://facebook.com/sunny.destination.np" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com/sunny.destination" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://youtube.com/@sunnydestinationtravel" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://viber.com" target="_blank">
+                    <i class="fab fa-viber"></i>
+                </a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sunny Destination Travel Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Package Filter Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const packageCards = document.querySelectorAll('.package-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Show/hide packages based on filter
+                    packageCards.forEach(card => {
+                        if (filterValue === 'all') {
+                            card.style.display = 'block';
+                        } else {
+                            if (card.getAttribute('data-category') === filterValue) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
