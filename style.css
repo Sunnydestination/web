@@ -4,27 +4,7 @@
     box-sizing: border-box;
 }
 
-:root {
-    --royal-blue: #4169E1;
-    --golden-brown: #B8860B;
-    --dark-blue: #1e3a8a;
-    --light-gold: #F4E4BC;
-    --white: #ffffff;
-    --dark-text: #2c3e50;
-    --light-gray: #f8f9fa;
-    --light-text: #fff;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
-
-body {
-    font-family: 'Montserrat', 'Segoe UI', 'Tahoma', Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--dark-text);
-    background-color: var(--white);
-    overflow-x: hidden;
-}
- 
 /* Landing Page Styles */
 .landing-container {
     min-height: 100vh;
@@ -56,21 +36,7 @@ body {
     text-decoration: none;
 }
 
-.rotating-logo {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, var(--white), var(--light-gold));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    animation: rotate 20s linear infinite;
-    position: relative;
-    margin: 0 auto;
-}
+
 
 .rotating-logo:hover {
     transform: scale(1.25);
@@ -178,17 +144,34 @@ body {
         font-size: 20px;
     }
     
-    .rotating-logo {
-        width: 150px;
-        height: 150px;
-    }
-    
+       
     .rotating-logo img {
         width: 120px;
         height: 120px;
     }
 }
- 
+.rotating-logo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--white), var(--light-gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    animation: rotate 20s linear infinite;
+    position: relative;
+    margin: 0 auto;
+}
+        body {
+        font-family: 'Montserrat', 'Segoe UI', 'Tahoma', Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--dark-text);
+        background-color: var(--white);
+        overflow-x: hidden;
+        }
 
         * {
             margin: 0;
@@ -455,8 +438,17 @@ body {
             --dark-gray: #333;
             --white: #ffffff;
             --gold: #ffc107;
+            --royal-blue: #4169E1;
+            --golden-brown: #B8860B;
+            --dark-blue: #1e3a8a;
+            --light-gold: #F4E4BC;
+            --dark-text: #2c3e50;
+            --light-text: #fff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
+        
+
         * {
             margin: 0;
             padding: 0;
@@ -464,12 +456,8 @@ body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-        body {
-            line-height: 1.6;
-            color: var(--dark-gray);
-            background-color: var(--white);
-        }
-        
+       
+               
         .container {
             max-width: 1200px;
             margin: 0 auto;
