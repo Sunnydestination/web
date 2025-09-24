@@ -402,8 +402,7 @@ body {
         }
 
         /* Responsive Design */
-        /* Responsive Design */
-
+    
         @media (max-width: 768px) {
             .social-icons {
         width: 300px;
