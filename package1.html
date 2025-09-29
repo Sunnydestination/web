@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Packages - Sunny Destination Travel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Sunny Destination Travel Pvt Ltd</a>
+            <img src="logo.png" alt="Company Logo" style="width:80px;">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="packages.html" class="active">Packages</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Our Travel Packages</h1>
+            <p class="hero-subtitle">
+                Discover amazing destinations with our carefully crafted travel packages. 
+                From cultural tours in Nepal to exotic international getaways.
+            </p>
+            <a href="#inbound" class="cta-button">Explore Packages</a>
+        </div>
+    </section>
+
+    <!-- Inbound Tours Section -->
+    <section id="inbound" class="section">
+        <div class="container">
+            <h2 class="section-title">Inbound Tours in Nepal</h2>
+            <p class="section-subtitle">
+                Explore the beauty and culture of Nepal with our specially designed inbound tour packages
+            </p>
+            
+            <div class="package-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="cultural">Cultural</button>
+                <button class="filter-btn" data-filter="adventure">Adventure</button>
+                <button class="filter-btn" data-filter="nature">Nature</button>
+            </div>
+            
+            <div class="cards-grid">
+                <!-- Kathmandu Package -->
+                <div class="card" data-category="cultural">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1587595431973-160d0d94add1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Kathmandu Valley Tour</h3>
+                        <p class="card-description">
+                            Explore the cultural heart of Nepal with visits to UNESCO World Heritage sites including Pashupatinath, Boudhanath, Swayambhunath, and Durbar Squares.
+                        </p>
+                        <div class="card-price">Starting from $450</div>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> 5 days / 4 nights</li>
+                            <li><i class="fas fa-check"></i> Heritage site visits</li>
+                            <li><i class="fas fa-check"></i> Cultural experiences</li>
+                            <li><i class="fas fa-check"></i> Hotel accommodation</li>
+                        </ul>
+                        <a href="#contact" class="cta-button" style="padding: 8px 20px; font-size: 0.9rem;">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Lumbini Package -->
+                <div class="card" data-category="cultural">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Lumbini Pilgrimage Tour</h3>
+                        <p class="card-description">
+                            Visit the birthplace of Lord Buddha and explore the sacred gardens, monasteries, and archaeological sites in this spiritual journey.
+                        </p>
+                        <div class="card-price">Starting from $380</div>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> 4 days / 3 nights</li>
+                            <li><i class="fas fa-check"></i> Maya Devi Temple visit</li>
+                            <li><i class="fas fa-check"></i> Monastery tours</li>
+                            <li><i class="fas fa-check"></i> Meditation sessions</li>
+                        </ul>
+                        <a href="#contact" class="cta-button" style="padding: 8px 20px; font-size: 0.9rem;">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Chitwan Package -->
+                <div class="card" data-category="nature">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1598894595355-9b2ceae46a04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Chitwan Jungle Safari</h3>
+                        <p class="card-description">
+                            Experience wildlife adventure with jungle safari, elephant rides, canoe trips, and cultural performances in Chitwan National Park.
+                        </p>
+                        <div class="card-price">Starting from $320</div>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> 3 days / 2 nights</li>
+                            <li><i class="fas fa-check"></i> Jungle safari</li>
+                            <li><i class="fas fa-check"></i> Elephant bathing</li>
+                            <li><i class="fas fa-check"></i> Tharu cultural show</li>
+                        </ul>
+                        <a href="#contact" class="cta-button" style="padding: 8px 20px; font-size: 0.9rem;">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Everest Base Camp Package -->
+                <div class="card" data-category="adventure">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1581595219557-1c07ff1d58fe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Everest Base Camp Trek</h3>
+                        <p class="card-description">
+                            Challenge yourself with this iconic trek to the base of the world's highest mountain, experiencing Sherpa culture and breathtaking Himalayan views.
+                        </p>
+                        <div class="card-price">Starting from $1250</div>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> 14 days / 13 nights</li>
+                            <li><i class="fas fa-check"></i> Professional guide</li>
+                            <li><i class="fas fa-check"></i> Tea house accommodation</li>
+                            <li><i class="fas fa-check"></i> Flight to Lukla included</li>
+                        </ul>
+                        <a href="#contact" class="cta-button" style="padding: 8px 20px; font-size: 0.9rem;">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Annapurna Base Camp Package -->
+                <div class="card" data-category="adventure">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Annapurna Base Camp Trek</h3>
+                        <p class="card-description">
+                            Trek through diverse landscapes to the base of the majestic Annapurna massif, experiencing rich cultural diversity and stunning mountain vistas.
+                        </p>
+                        <div class="card-price">Starting from $950</div>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> 12 days / 11 nights</li>
+                            <li><i class="fas fa-check"></i> Mountain views</li>
+                            <li><i class="fas fa-check"></i> Local Gurung culture</li>
+                            <li><i class="fas fa-check"></i> Natural hot springs</li>
+                        </ul>
+                        <a href="#contact" class="cta-button" style="padding: 8px 20px; font-size: 0.9rem;">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Tilicho Lake Package -->
+                <div class="card" data-category="adventure">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1622279458115-69c8c7e94576?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Tilicho Lake Trek</h3>
+                        <p class="card-description">
+                            Journey to one of the highest lakes in the world, nestled amidst the Annapurna range, offering spectacular mountain scenery and challenging trails.
+                        </p>
+                        <div class="card-price">Starting from $1100</div>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> 15 days / 14 nights</li>
+                            <li><i class="fas fa-check"></i> High-altitude adventure</li>
+                            <li><i class="fas fa-check"></i> Thorong La Pass crossing</li>
+                            <li><i class="fas fa-check"></i> Manang village visit</li>
+                        </ul>
+                        <a href="#contact" class="cta-button" style="padding: 8px 20px; font-size: 0.9rem;">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Outbound Tours Section -->
+    <section id="outbound" class="section" style="background-color: var(--light-gray);">
+        <div class="container">
+            <h2 class="section-title">Outbound International Tours</h2>
+            <p class="section-subtitle">
+                Discover amazing destinations around the world with our international tour packages
+            </p>
+            
+            <div class="package-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="beach">Beach</button>
+                <button class="filter-btn" data-filter="city">City</button>
+                <button class="filter-btn" data-filter="luxury">Luxury</button>
+            </div>
+            
+            <div class="cards-grid">
+                <!-- Thailand Package -->
+                <div class="card" data-category="beach">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Thailand Beach Paradise</h3>
+                        <p class="card-description">
+                            Enjoy the beautiful beaches of Phuket, Phi Phi Islands, and Krabi with this all-inclusive Thailand beach package.
+                        </p>
+                        <div class="card-price">Starting from $850</div>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> 7 days / 6 nights</li>
+                            <li><i class="fas fa-check"></i> Island hopping</li>
+                            <li><i class="fas fa-check"></i> Thai massage sessions</li>
+                            <li><i class="fas fa-check"></i> Beachfront accommodation</li>
+                        </ul>
+                        <a href="#contact" class="cta-button" style="padding: 8px 20px; font-size: 0.9rem;">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Malaysia Package -->
+                <div class="card" data-category="city">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1596422846543-75c6fc197f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Malaysia Cultural Experience</h3>
+                        <p class="card-description">
+                            Explore the vibrant cities of Kuala Lumpur and Penang, with their mix of modern architecture and rich cultural heritage.
+                        </p>
+                        <div class="card-price">Starting from $720</div>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> 6 days / 5 nights</li>
+                            <li><i class="fas fa-check"></i> Petronas Towers visit</li>
+                            <li><i class="fas fa-check"></i> Batu Caves exploration</li>
+                            <li><i class="fas fa-check"></i> Street food tour</li>
+                        </ul>
+                        <a href="#contact" class="cta-button" style="padding: 8px 20px; font-size: 0.9rem;">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Dubai Package -->
+                <div class="card" data-category="luxury">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Dubai Luxury Escape</h3>
+                        <p class="card-description">
+                            Indulge in the ultimate luxury experience in Dubai with desert safaris, shopping extravaganzas, and iconic landmark visits.
+                        </p>
+                        <div class="card-price">Starting from $1200</div>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> 5 days / 4 nights</li>
+                            <li><i class="fas fa-check"></i> Burj Khalifa access</li>
+                            <li><i class="fas fa-check"></i> Desert safari with dinner</li>
+                            <li><i class="fas fa-check"></i> Luxury hotel stay</li>
+                        </ul>
+                        <a href="#contact" class="cta-button" style="padding: 8px 20px; font-size: 0.9rem;">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Singapore Package -->
+                <div class="card" data-category="city">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Singapore City Tour</h3>
+                        <p class="card-description">
+                            Experience the clean, green, and modern city-state of Singapore with visits to Gardens by the Bay, Sentosa Island, and more.
+                        </p>
+                        <div class="card-price">Starting from $950</div>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> 4 days / 3 nights</li>
+                            <li><i class="fas fa-check"></i> Marina Bay Sands visit</li>
+                            <li><i class="fas fa-check"></i> Universal Studios ticket</li>
+                            <li><i class="fas fa-check"></i> Night safari experience</li>
+                        </ul>
+                        <a href="#contact" class="cta-button" style="padding: 8px 20px; font-size: 0.9rem;">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Maldives Package -->
+                <div class="card" data-category="luxury beach">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Maldives Island Retreat</h3>
+                        <p class="card-description">
+                            Escape to paradise with this luxury Maldives package featuring overwater bungalows, crystal clear waters, and pristine beaches.
+                        </p>
+                        <div class="card-price">Starting from $1500</div>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> 6 days / 5 nights</li>
+                            <li><i class="fas fa-check"></i> Overwater villa stay</li>
+                            <li><i class="fas fa-check"></i> Snorkeling & diving</li>
+                            <li><i class="fas fa-check"></i> Romantic dinner on beach</li>
+                        </ul>
+                        <a href="#contact" class="cta-button" style="padding: 8px 20px; font-size: 0.9rem;">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Bhutan Package -->
+                <div class="card" data-category="cultural">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1584697964358-3e16ca4e4a1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Bhutan Cultural Journey</h3>
+                        <p class="card-description">
+                            Discover the last Himalayan kingdom with visits to ancient monasteries, fortresses, and experiencing the unique Bhutanese culture.
+                        </p>
+                        <div class="card-price">Starting from $1100</div>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> 7 days / 6 nights</li>
+                            <li><i class="fas fa-check"></i> Tiger's Nest Monastery</li>
+                            <li><i class="fas fa-check"></i> Traditional Bhutanese meals</li>
+                            <li><i class="fas fa-check"></i> Cultural performances</li>
+                        </ul>
+                        <a href="#contact" class="cta-button" style="padding: 8px 20px; font-size: 0.9rem;">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Helicopter Booking Section -->
+    <section id="helicopter" class="section">
+        <div class="container">
+            <h2 class="section-title">Helicopter Tours & Booking</h2>
+            <p class="section-subtitle">
+                Experience Nepal's majestic mountains from a unique perspective with our helicopter tours
+            </p>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Everest Base Camp Helicopter Tour</h3>
+                        <p class="card-description">
+                            Witness the world's highest peak up close with this breathtaking helicopter tour to Everest Base Camp.
+                        </p>
+                        <div class="card-price">$1050 per person</div>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> 4-5 hour duration</li>
+                            <li><i class="fas fa-check"></i> Breakfast at Hotel Everest View</li>
+                            <li><i class="fas fa-check"></i> Close-up views of Everest</li>
+                            <li><i class="fas fa-check"></i> Landing at Kalapatthar</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1564069114555-4c173d1f9bf8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Annapurna Base Camp Helicopter Tour</h3>
+                        <p class="card-description">
+                            Soar above the Annapurna range for spectacular views of some of the world's most beautiful mountains.
+                        </p>
+                        <div class="card-price">$850 per person</div>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> 2-3 hour duration</li>
+                            <li><i class="fas fa-check"></i> Views of Annapurna I-IV</li>
+                            <li><i class="fas fa-check"></i> Macchapucchre (Fishtail) view</li>
+                            <li><i class="fas fa-check"></i> Landing at ABC</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1594736797936-d0b9fc18f6d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Langtang Valley Helicopter Tour</h3>
+                        <p class="card-description">
+                            Explore the beautiful Langtang region with its stunning glaciers and picturesque valleys.
+                        </p>
+                        <div class="card-price">$750 per person</div>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> 2-3 hour duration</li>
+                            <li><i class="fas fa-check"></i> Langtang Lirung views</li>
+                            <li><i class="fas fa-check"></i> Tibetan border area</li>
+                            <li><i class="fas fa-check"></i> Cultural village visits</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="booking-form">
+                <h3 style="text-align: center; margin-bottom: 2rem; color: var(--royal-blue);">Helicopter Booking Request</h3>
+                <form id="helicopter-booking-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="full-name">Full Name</label>
+                            <input type="text" id="full-name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tour-type">Tour Type</label>
+                            <select id="tour-type" class="form-control" required>
+                                <option value="">Select a tour</option>
+                                <option value="everest">Everest Base Camp</option>
+                                <option value="annapurna">Annapurna Base Camp</option>
+                                <option value="langtang">Langtang Valley</option>
+                                <option value="custom">Custom Tour</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="preferred-date">Preferred Date</label>
+                            <input type="date" id="preferred-date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="passengers">Number of Passengers</label>
+                            <input type="number" id="passengers" class="form-control" min="1" max="5" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="special-requests">Special Requests</label>
+                        <textarea id="special-requests" class="form-control" rows="4"></textarea>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <button type="submit" class="cta-button">Submit Booking Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3 class="footer-title">Sunny Destination Travel Pvt. Ltd.</h3>
+                <div class="footer-contact">
+                    <div>
+                        <i class="far fa-envelope"></i>
+                        <span>sunnydestination2021@gmail.com</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-phone"></i>
+                        <span>+977 9845987393</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-social">
+                <a href="https://facebook.com/sunny.destination.np" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com/sunny.destination" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://youtube.com/@sunnydestinationtravel" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://viber.com" target="_blank">
+                    <i class="fab fa-viber"></i>
+                </a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sunny Destination Travel Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
